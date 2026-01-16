@@ -3,6 +3,7 @@ from sqlalchemy.orm import relationship
 from .database import Base, get_db
 
 
+# data for basic Country/Regional location
 class Country(Base):
     __tablename__ = 'countries'
 
@@ -13,6 +14,7 @@ class Country(Base):
     cities = relationship("City", back_populates="country")
 
 
+# data for city location and coordinates, using FK from country
 class City(Base):
     __tablename__ = "cities"
 
@@ -26,6 +28,7 @@ class City(Base):
     climate_data = relationship("ClimateNormal", back_populates="city")
 
 
+# data for climate by month from each city, linked to FK of city name
 class ClimateNormal(Base):
     __tablename__ = "climate_normals"
 

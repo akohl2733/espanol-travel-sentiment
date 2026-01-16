@@ -1,0 +1,58 @@
+import { useParams } from 'react-router-dom';
+import { useEffect, useState } from 'react';
+
+export default function CityDetail() {
+    const {id} = useParams();
+    const [details, setDetails] = useState(null);
+    const [loading, setLoading] = useState(true);
+    const [error, setError] = useState(null);
+
+    useEffect(() => {
+        async function getData() {
+            try {
+                const response = await fetch(`http://127.0.0.1:8000/city/${id}`);
+                if (!response.ok) {
+                    throw new Error(`Error fetching data. Status: ${response.status}`);
+                } else {
+                    console.log(response)
+                    const data = await response.json();
+                    setDetails(data);
+                }
+            } catch (err) {
+                setError(err);
+            } finally {
+                setLoading(false);
+            }
+        }
+        getData();
+    }, []);
+
+    if (loading) {
+        return <div>Loading.....</div>
+    }
+    if (error) {
+        return <div>Error: {error}</div>
+    }
+
+    return (
+        <div className="city-page">
+            {/* Direct fields from City table */}
+            <h1>{details.city}</h1> 
+            
+            {/* Nested fields from Country table */}
+            <h3>Located in: {details.country.name} ({details.country.region})</h3>
+
+            {/* Mapping through the nested Climate list */}
+            <div className="weather-grid">
+            {details.climate_data.map((month) => (
+                <div key={month.month} className="month-card">
+                <p>Month: {month.month}</p>
+                <p>Average High: {month.avg_high_temp}°F</p>
+                <p>Average Number of Rainy Days: {month.rainy_days}</p>
+                <br />
+                </div>
+            ))}
+            </div>
+        </div>
+    );
+}

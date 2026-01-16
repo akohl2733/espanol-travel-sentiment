@@ -1,8 +1,9 @@
-from fastapi import Depends, FastAPI
+from fastapi import Depends, FastAPI, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
 from sqlalchemy.orm import joinedload
 from .database import get_db, Base, SessionLocal, engine
 from .models import City, Country, ClimateNormal
+from .schemas import CityDetailSchema
 
 
 app = FastAPI()
@@ -10,6 +11,7 @@ app = FastAPI()
 
 origins = [
     "http://localhost:5173",
+    "http://localhost:5174",
 ]
 
 
@@ -37,10 +39,12 @@ async def get_data(db: SessionLocal = Depends(get_db)):
     return countries
 
 
-@app.get("/city/{id}")
-async def get_city_details(city_id: int, db: SessionLocal = Depends(get_db)):
+@app.get("/city/{id}", response_model=CityDetailSchema)
+async def get_city_details(id: int, db: SessionLocal = Depends(get_db)):
     city = db.query(City).options(
         joinedload(City.country),
         joinedload(City.climate_data)
-    ).filter(City.id == city_id).first()
+    ).filter(City.id == id).first()
+    if not city:
+        raise HTTPException(status_code=404, detail="City not found")
     return city
