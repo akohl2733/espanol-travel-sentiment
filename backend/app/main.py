@@ -1,6 +1,8 @@
-from fastapi import FastAPI
+from fastapi import Depends, FastAPI
 from fastapi.middleware.cors import CORSMiddleware
-from .database import engine, Base
+from sqlalchemy.orm import joinedload
+from .database import get_db, Base, SessionLocal, engine
+from .models import City, Country, ClimateNormal
 
 
 app = FastAPI()
@@ -30,5 +32,15 @@ async def root():
 
 
 @app.get("/data")
-async def get_data():
-    return {"message": "This is functioning", "Things to do": ["set up react pieces", 'figure out how to pull in API data']}
+async def get_data(db: SessionLocal = Depends(get_db)):
+    countries = db.query(Country).all()
+    return countries
+
+
+@app.get("/city/{id}")
+async def get_city_details(city_id: int, db: SessionLocal = Depends(get_db)):
+    city = db.query(City).options(
+        joinedload(City.country),
+        joinedload(City.climate_data)
+    ).filter(City.id == city_id).first()
+    return city

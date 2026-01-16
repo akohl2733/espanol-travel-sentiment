@@ -1,0 +1,253 @@
+city,month,avg_high_temp,avg_low_temp,rainy_days,total_rain_in
+Mexico City,1,71,44,1.4,0.3
+Mexico City,2,74,46,1.1,0.2
+Mexico City,3,77,49,1.6,0.2
+Mexico City,4,79,53,3.8,0.5
+Mexico City,5,80,56,9.4,1.5
+Mexico City,6,77,67,20.1,4.5
+Mexico City,7,74,56,23.4,4.9
+Mexico City,8,74,56,23.1,4.7
+Mexico City,9,73,56,19.9,4.6
+Mexico City,10,73,52,10.1,2
+Mexico City,11,72,47,2.7,0.4
+Mexico City,12,71,44,0.9,0.1
+Cancún,1,81,67,5.9,1.9
+Cancún,2,82,68,4.8,1.6
+Cancún,3,83,70,4.2,1.2
+Cancún,4,85,73,4.2,1.4
+Cancún,5,87,76,7.3,2.8
+Cancún,6,88,77,10.8,5.2
+Cancún,7,90,77,10.1,3.4
+Cancún,8,90,76,10.8,3.4
+Cancún,9,89,75,14.4,5.3
+Cancún,10,86,74,13,5.6
+Cancún,11,84,71,7.8,3.4
+Cancún,12,82,69,5.9,2
+Puerto Vallarta,1,81,62,2.4,1.1
+Puerto Vallarta,2,81,62,1.3,0.6
+Puerto Vallarta,3,81,63,0.5,0.3
+Puerto Vallarta,4,83,66,0.4,0.1
+Puerto Vallarta,5,86,71,1.6,0.4
+Puerto Vallarta,6,89,76,13.4,5.2
+Puerto Vallarta,7,90,76,23.1,9.4
+Puerto Vallarta,8,90,76,24.6,9.9
+Puerto Vallarta,9,90,76,20.8,9.3
+Puerto Vallarta,10,89,74,9.4,3.5
+Puerto Vallarta,11,86,69,2.3,0.9
+Puerto Vallarta,12,82,64,1.7,0.6
+Cabo San Lucas,1,79,61,1.7,0.5
+Cabo San Lucas,2,80,61,0.8,0.2
+Cabo San Lucas,3,81,63,0.3,0.1
+Cabo San Lucas,4,83,66,0.3,0
+Cabo San Lucas,5,86,69,0.3,0
+Cabo San Lucas,6,89,74,0.6,0.1
+Cabo San Lucas,7,91,78,2.4,0.6
+Cabo San Lucas,8,91,78,5.6,1.7
+Cabo San Lucas,9,91,76,5.6,2.4
+Cabo San Lucas,10,90,72,2,0.9
+Cabo San Lucas,11,85,68,1.1,0.4
+Cabo San Lucas,12,80,63,1.6,0.5
+San José,1,78,64,3.3,1.1
+San José,2,79,64,2.5,0.8
+San José,3,80,64,2.5,0.7
+San José,4,81,65,5.8,1.9
+San José,5,79,65,11.6,4.8
+San José,6,78,64,13.3,5.6
+San José,7,78,65,12.7,4.7
+San José,8,78,64,12.9,5.2
+San José,9,77,63,14.6,6.2
+San José,10,77,63,15.2,6.5
+San José,11,77,64,10.8,4.4
+San José,12,77,64,6.1,2.2
+Liberia,1,92,75,0.3,0.1
+Liberia,2,94,75,0.3,0.1
+Liberia,3,95,75,0.4,0.1
+Liberia,4,95,77,1.8,0.6
+Liberia,5,92,77,8.2,3.9
+Liberia,6,90,76,10.3,4.9
+Liberia,7,90,76,7.9,3.1
+Liberia,8,90,76,9.3,4.5
+Liberia,9,89,75,13.3,7.1
+Liberia,10,88,75,12.2,6.7
+Liberia,11,89,75,5.4,2.4
+Liberia,12,90,75,1.3,0.4
+Limón,1,85,76,5.5,2.5
+Limón,2,85,76,4,1.8
+Limón,3,85,76,3.7,1.3
+Limón,4,86,77,7.3,2.7
+Limón,5,86,77,14.6,5.9
+Limón,6,86,77,16.7,7.1
+Limón,7,86,77,17.3,7
+Limón,8,86,77,16.7,6.5
+Limón,9,86,77,17.1,6.3
+Limón,10,86,77,18,7.2
+Limón,11,85,77,14.4,6.9
+Limón,12,85,77,9.6,4.4
+Suchitoto,1,91,67,0.5,0.1
+Suchitoto,2,93,67,0.4,0.1
+Suchitoto,3,95,69,0.7,0.1
+Suchitoto,4,95,72,3.5,0.6
+Suchitoto,5,92,73,8.3,3.1
+Suchitoto,6,90,72,12.6,5.3
+Suchitoto,7,90,71,11.4,4.1
+Suchitoto,8,90,72,12.4,4.7
+Suchitoto,9,89,72,13.4,5.4
+Suchitoto,10,88,71,9.7,3.9
+Suchitoto,11,89,69,3,1
+Suchitoto,12,90,67,1.3,0.2
+Santa Ana,1,84,63,0.5,0.1
+Santa Ana,2,87,64,0.3,0.1
+Santa Ana,3,88,66,0.7,0.1
+Santa Ana,4,89,68,2.5,0.6
+Santa Ana,5,87,69,7.9,3
+Santa Ana,6,84,69,12.7,5.3
+Santa Ana,7,85,68,11.7,4.1
+Santa Ana,8,84,68,12.6,4.7
+Santa Ana,9,83,68,13.3,5.2
+Santa Ana,10,83,67,9.4,3.8
+Santa Ana,11,83,65,2.8,1.1
+Santa Ana,12,84,64,1.3,0.2
+Juayúa,1,79,60,0.4,0.1
+Juayúa,2,80,60,0.3,0.1
+Juayúa,3,82,62,0.7,0.1
+Juayúa,4,82,65,2.4,0.5
+Juayúa,5,80,66,8.3,3
+Juayúa,6,79,65,12.9,5.4
+Juayúa,7,79,64,12.1,4.3
+Juayúa,8,79,64,13.1,4.7
+Juayúa,9,78,64,13.2,5.3
+Juayúa,10,78,64,9.3,4
+Juayúa,11,78,62,2.6,1.1
+Juayúa,12,79,60,1.1,0.2
+San Salvador,1,85,64,0.3,0.1
+San Salvador,2,86,64,0.3,0.1
+San Salvador,3,87,66,0.6,0.1
+San Salvador,4,87,68,2.3,0.6
+San Salvador,5,85,69,8.3,3.2
+San Salvador,6,84,69,12.7,5.4
+San Salvador,7,84,68,11.5,4.2
+San Salvador,8,84,68,12.7,4.9
+San Salvador,9,83,68,13.8,5.7
+San Salvador,10,83,67,9.9,4.2
+San Salvador,11,84,66,2.8,1
+San Salvador,12,84,64,1.1,0.2
+Guatemala City,1,74,56,0.7,0.1
+Guatemala City,2,76,57,0.4,0.1
+Guatemala City,3,78,59,1.3,0.2
+Guatemala City,4,80,61,3.9,0.9
+Guatemala City,5,79,63,10.3,3.4
+Guatemala City,6,76,63,15.6,6.3
+Guatemala City,7,76,62,14.3,5
+Guatemala City,8,76,62,15,5.5
+Guatemala City,9,75,62,16.2,6.4
+Guatemala City,10,74,61,11.2,4.2
+Guatemala City,11,73,59,4.2,1.2
+Guatemala City,12,73,57,1.3,0.3
+Antigua,1,73,53,0.6,0.1
+Antigua,2,75,54,0.5,0.1
+Antigua,3,77,56,1.6,0.3
+Antigua,4,78,58,4.5,1.1
+Antigua,5,76,60,11.1,3.9
+Antigua,6,74,60,16.7,6.9
+Antigua,7,74,59,15.6,5.7
+Antigua,8,74,59,16.5,5.2
+Antigua,9,73,60,17.7,7.2
+Antigua,10,72,59,12.6,4.9
+Antigua,11,72,56,4.7,1.5
+Antigua,12,72,54,1.3,0.3
+Atitlán,1,73,50,0.8,0.1
+Atitlán,2,75,51,0.9,0.2
+Atitlán,3,77,53,2.8,0.7
+Atitlán,4,77,56,6.9,2
+Atitlán,5,76,58,14.4,5.5
+Atitlán,6,74,58,20.2,9.2
+Atitlán,7,74,57,19.7,7.9
+Atitlán,8,74,57,20.2,8.4
+Atitlán,9,73,58,21.4,10.1
+Atitlán,10,73,57,17,7.4
+Atitlán,11,73,54,6.7,2.3
+Atitlán,12,73,51,1.6,0.4
+Tegucigalpa,1,78,59,0.4,0.1
+Tegucigalpa,2,81,59,0.5,0.1
+Tegucigalpa,3,84,61,1,0.2
+Tegucigalpa,4,86,64,2.7,0.7
+Tegucigalpa,5,85,66,9.8,3.2
+Tegucigalpa,6,83,66,13.3,4.7
+Tegucigalpa,7,82,65,10.6,2.8
+Tegucigalpa,8,83,65,12.3,3.4
+Tegucigalpa,9,82,65,15,4.9
+Tegucigalpa,10,80,64,11.1,3.8
+Tegucigalpa,11,78,62,3.7,1.1
+Tegucigalpa,12,78,60,1.3,0.3
+San Pedro Sula,1,82,68,5.9,2.3
+San Pedro Sula,2,85,69,4.6,1.9
+San Pedro Sula,3,88,70,3.8,1.3
+San Pedro Sula,4,91,73,3.4,1.1
+San Pedro Sula,5,92,75,6.4,2.1
+San Pedro Sula,6,91,75,11.1,4
+San Pedro Sula,7,90,74,11.3,4
+San Pedro Sula,8,90,74,11.2,3.8
+San Pedro Sula,9,90,74,11.5,4.2
+San Pedro Sula,10,87,73,10.3,4.6
+San Pedro Sula,11,84,71,8.5,3.9
+San Pedro Sula,12,82,69,7.2,3.1
+Granada,1,88,72,0.2,0
+Granada,2,89,72,0.2,0.1
+Granada,3,91,73,0.5,0.1
+Granada,4,93,76,1.8,0.5
+Granada,5,92,77,6.8,3.6
+Granada,6,89,76,8.7,4.8
+Granada,7,88,75,6.6,2.7
+Granada,8,89,75,8.7,3.7
+Granada,9,88,75,11.4,6.5
+Granada,10,88,75,10.4,5.9
+Granada,11,88,73,4.1,1.8
+Granada,12,88,72,0.9,0.3
+León,1,91,74,0.2,0
+León,2,92,74,0.2,0.1
+León,3,93,75,0.8,0.2
+León,4,94,77,2.2,0.7
+León,5,92,77,8.6,4.2
+León,6,89,76,10.9,5.6
+León,7,90,76,8.1,3
+León,8,90,76,10.8,4.1
+León,9,89,75,13.6,7.2
+León,10,88,74,11.4,5.9
+León,11,90,74,3.9,1.5
+León,12,91,74,1,0.3
+Masaya,1,87,69,0.2,0
+Masaya,2,88,70,0.2,0.1
+Masaya,3,90,71,0.5,0.1
+Masaya,4,91,74,1.8,0.6
+Masaya,5,90,75,6.9,3.6
+Masaya,6,87,74,8.9,4.8
+Masaya,7,87,73,6.9,2.7
+Masaya,8,87,73,8.9,3.7
+Masaya,9,87,73,11.7,6.6
+Masaya,10,86,72,10.5,5.9
+Masaya,11,87,71,4.2,1.8
+Masaya,12,86,70,1,0.3
+Panama City,1,88,76,1.7,0.6
+Panama City,2,89,76,0.9,0.2
+Panama City,3,90,76,1.5,0.4
+Panama City,4,89,77,5.4,2.5
+Panama City,5,87,77,11.1,6.1
+Panama City,6,86,77,11.3,6.8
+Panama City,7,87,77,11.5,6
+Panama City,8,86,76,11.6,6.3
+Panama City,9,86,76,12.5,6.9
+Panama City,10,85,76,13.3,7.5
+Panama City,11,85,76,12.8,7.1
+Panama City,12,87,76,6.5,3.3
+Panama Viejo,1,88,76,1.7,0.6
+Panama Viejo,2,89,76,0.9,0.2
+Panama Viejo,3,90,76,1.5,0.4
+Panama Viejo,4,89,77,5.4,2.5
+Panama Viejo,5,87,77,11.1,6.1
+Panama Viejo,6,86,77,11.3,6.8
+Panama Viejo,7,87,77,11.5,6
+Panama Viejo,8,86,76,11.6,6.3
+Panama Viejo,9,86,76,12.5,6.9
+Panama Viejo,10,85,76,13.3,7.5
+Panama Viejo,11,85,76,12.8,7.1
+Panama Viejo,12,87,76,6.5,3.3

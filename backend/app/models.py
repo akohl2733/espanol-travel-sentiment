@@ -1,6 +1,6 @@
 from sqlalchemy import Column, Integer, String, Float, ForeignKey
 from sqlalchemy.orm import relationship
-from .database import Base
+from .database import Base, get_db
 
 
 class Country(Base):
@@ -23,3 +23,18 @@ class City(Base):
     long = Column(Float)
 
     country = relationship("Country", back_populates="cities")
+    climate_data = relationship("ClimateNormal", back_populates="city")
+
+
+class ClimateNormal(Base):
+    __tablename__ = "climate_normals"
+
+    id = Column(Integer, primary_key=True)
+    city_id = Column(ForeignKey("cities.id"))
+    month = Column(Integer)
+    avg_high_temp = Column(Float)
+    avg_low_temp = Column(Float)
+    rainy_days = Column(Float)
+    total_rain_in = Column(Float)
+
+    city = relationship("City", back_populates="climate_data")
