@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import { useNavigate } from "react-router-dom";
+import "./SearchButton.css";
 
 export default function SearchButton() {
     const [ query, setQuery ] = useState("");
@@ -42,7 +43,6 @@ export default function SearchButton() {
     return (
         <div className="search-page">
             <div className="search-body">
-                <h1>Find your City</h1>
                 <input 
                     type="text"
                     placeholder="Search for a city..."

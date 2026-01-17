@@ -1,4 +1,4 @@
-import { useParams } from 'react-router-dom';
+import { useParams, useNavigate } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import "./CityDetail.css";
 
@@ -9,7 +9,7 @@ export default function CityDetail() {
     const [error, setError] = useState(null);
 
     useEffect(() => {
-        async function getData() {
+        const getData = async () => {
             try {
                 const response = await fetch(`http://127.0.0.1:8000/city/${id}`);
                 if (!response.ok) {
@@ -38,7 +38,10 @@ export default function CityDetail() {
     return (
         <div className="city-page">
             {/* Direct fields from City table */}
-            <h1>{details.city}</h1> 
+            <div className='city-page-header'>
+                <h1>{details.city}</h1>
+                <HomeButton />
+            </div> 
             
             {/* Nested fields from Country table */}
             <h3>Located in: {details.country.name} ({details.country.region})</h3>
@@ -52,7 +55,6 @@ export default function CityDetail() {
                 </p>
                 <p>Average High: {month.avg_high_temp}°F</p>
                 <p>Average Number of Rainy Days: {month.rainy_days}</p>
-                <br />
                 </div>
             ))}
             </div>
@@ -65,4 +67,17 @@ const months = ["January", "February", "March", "April", "May", "June", "July", 
 function numToMonth(num) {
     const month = months[num-1];
     return month;
+}
+
+
+function HomeButton() {
+    const navigate = useNavigate();
+
+    return (
+        <div className="home-button-body">
+            <button type="button" onClick={() => navigate("/")}>
+                Go to Home Page.
+            </button>
+        </div>
+    )
 }
