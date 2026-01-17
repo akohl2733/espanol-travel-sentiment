@@ -2,7 +2,7 @@ from fastapi import Depends, FastAPI, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
 from sqlalchemy.orm import joinedload
 from .database import get_db, Base, SessionLocal, engine
-from .models import City, Country, ClimateNormal
+from .models import City, Country
 from .schemas import CityDetailSchema
 
 
@@ -33,10 +33,10 @@ async def root():
     return {"Hello": "World"}
 
 
-@app.get("/data")
-async def get_data(db: SessionLocal = Depends(get_db)):
-    countries = db.query(Country).all()
-    return countries
+@app.get("/search_cities")
+async def search_cities(q: str, db: SessionLocal = Depends(get_db)):
+    cities = db.query(City).filter(City.city.ilike(f"{q}%")).limit(5).all()
+    return cities
 
 
 @app.get("/city/{id}", response_model=CityDetailSchema)

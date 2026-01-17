@@ -1,5 +1,6 @@
 import { useParams } from 'react-router-dom';
 import { useEffect, useState } from 'react';
+import "./CityDetail.css";
 
 export default function CityDetail() {
     const {id} = useParams();
@@ -25,7 +26,7 @@ export default function CityDetail() {
             }
         }
         getData();
-    }, []);
+    }, [id]);
 
     if (loading) {
         return <div>Loading.....</div>
@@ -46,7 +47,9 @@ export default function CityDetail() {
             <div className="weather-grid">
             {details.climate_data.map((month) => (
                 <div key={month.month} className="month-card">
-                <p>Month: {month.month}</p>
+                <p>
+                    {numToMonth(month.month)}
+                </p>
                 <p>Average High: {month.avg_high_temp}°F</p>
                 <p>Average Number of Rainy Days: {month.rainy_days}</p>
                 <br />
@@ -55,4 +58,11 @@ export default function CityDetail() {
             </div>
         </div>
     );
+}
+
+const months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+
+function numToMonth(num) {
+    const month = months[num-1];
+    return month;
 }
