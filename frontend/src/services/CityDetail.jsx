@@ -35,28 +35,40 @@ export default function CityDetail() {
         return <div>Error: {error}</div>
     }
 
-    return (
-        <div className="city-page">
-            {/* Direct fields from City table */}
-            <div className='city-page-header'>
-                <h1>{details.city}</h1>
-                <HomeButton />
-            </div> 
-            
-            {/* Nested fields from Country table */}
-            <h3>Located in: {details.country.name} ({details.country.region})</h3>
+    const backgroundUrl = `/city-pics/city-pic-${id}.jpg`;
 
-            {/* Mapping through the nested Climate list */}
-            <div className="weather-grid">
-            {details.climate_data.map((month) => (
-                <div key={month.month} className="month-card">
-                <p>
-                    {numToMonth(month.month)}
-                </p>
-                <p>Average High: {month.avg_high_temp}°F</p>
-                <p>Average Number of Rainy Days: {month.rainy_days}</p>
+    return (
+        <div 
+            className="city-page"
+            style={{
+                backgroundImage: `linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url(${backgroundUrl})`,
+                backgroundSize: 'cover',
+                backgroundPosition: 'center',
+                backgroundRepeat: "no-repeat",
+                backgroundAttachment: 'fixed'
+            }}>
+            <div className="city-text">
+                {/* Direct fields from City table */}
+                <div className='city-page-header'>
+                    <h1>{details.city}</h1>
+                    <HomeButton />
+                </div> 
+                
+                {/* Nested fields from Country table */}
+                <h3>Located in: {details.country.name} ({details.country.region})</h3>
+
+                {/* Mapping through the nested Climate list */}
+                <div className="weather-grid">
+                {details.climate_data.map((month) => (
+                    <div key={month.month} className="month-card">
+                    <p>
+                        {numToMonth(month.month)}
+                    </p>
+                    <p>Average High: {month.avg_high_temp}°F</p>
+                    <p>Average Number of Rainy Days: {month.rainy_days}</p>
+                    </div>
+                ))}
                 </div>
-            ))}
             </div>
         </div>
     );

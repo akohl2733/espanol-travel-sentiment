@@ -3,7 +3,8 @@ from fastapi.middleware.cors import CORSMiddleware
 from sqlalchemy.orm import joinedload
 from .database import get_db, Base, SessionLocal, engine
 from .models import City, Country
-from .schemas import CityDetailSchema
+from .schemas import CityDetailSchema, CityByRegionSchema
+from typing import List
 
 
 app = FastAPI()
@@ -37,6 +38,16 @@ async def root():
 async def search_cities(q: str, db: SessionLocal = Depends(get_db)):
     cities = db.query(City).filter(City.city.ilike(f"{q}%")).limit(5).all()
     return cities
+
+
+@app.get("/cities_by_region", response_model=List[CityByRegionSchema])
+async def get_city_by_region(q: str, db: SessionLocal = Depends(get_db)):
+    countries = db.query(Country).options(
+        joinedload(Country.cities)
+    ).filter(Country.region.ilike(f"%{q}%")).all()
+    if not countries:
+        raise HTTPException(status_code=404, detail="Region not found")
+    return countries
 
 
 @app.get("/city/{id}", response_model=CityDetailSchema)

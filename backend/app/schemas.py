@@ -20,6 +20,15 @@ class ClimateSchema(BaseModel):
     class Config:
         from_attributes = True
 
+class CitySchema(BaseModel):
+    id: int
+    city: str
+    lat: float
+    long: float
+
+    class Config:
+        from_attributes = True
+
 
 class CityDetailSchema(BaseModel):
     id: int
@@ -28,6 +37,16 @@ class CityDetailSchema(BaseModel):
     long: float
     country: CountrySchema
     climate_data: List[ClimateSchema]
+
+    class Config:
+        from_attributes = True
+
+
+class CityByRegionSchema(BaseModel):
+    id: int
+    name: str
+    region: str
+    cities: List[CitySchema]
 
     class Config:
         from_attributes = True

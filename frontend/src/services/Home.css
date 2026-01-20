@@ -16,14 +16,14 @@
     background-attachment: fixed;
 }
 
-.home-text {
+.home-title {
     background: linear-gradient(118.11deg, #75FFEE 0%, #9EF5FF 32.98%, #FBB2FF 84.58%);
     background-clip:text;
     -webkit-text-fill-color:transparent;
     text-align: center;
 }
 
-.home-body {
+.home-button {
     color: white;
     padding: 20px 80px;
     border-radius: 16px;
