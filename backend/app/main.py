@@ -39,15 +39,9 @@ async def search_cities(q: str, db: SessionLocal = Depends(get_db)):
     cities = db.query(City).filter(City.city.ilike(f"{q}%")).limit(5).all()
     return cities
 
-
-@app.get("/cities_by_region", response_model=List[CityByRegionSchema])
-async def get_city_by_region(q: str, db: SessionLocal = Depends(get_db)):
-    countries = db.query(Country).options(
-        joinedload(Country.cities)
-    ).filter(Country.region.ilike(f"%{q}%")).all()
-    if not countries:
-        raise HTTPException(status_code=404, detail="Region not found")
-    return countries
+@app.get("/all_regions", response_model=List[CityByRegionSchema])
+async def get_all_regions(db: SessionLocal = Depends(get_db)):
+    return db.query(Country).options(joinedload(Country.cities)).all()
 
 
 @app.get("/city/{id}", response_model=CityDetailSchema)
