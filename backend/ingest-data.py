@@ -2,8 +2,8 @@ import os
 
 import pandas as pd
 
-from app.models import Country, City, ClimateNormal
-from app.database import Base, engine, SessionLocal
+from core.models import Country, City, ClimateNormal
+from core.database import Base, engine, SessionLocal
 
 
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
