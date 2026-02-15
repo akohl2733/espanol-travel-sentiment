@@ -9,3 +9,11 @@ output "container_registry_name" {
 output "container_registry_login_server" {
     value = azurerm_container_registry.acr.login_server
 }
+
+output "backend_url" {
+    value = "https://${azurerm_container_app.backend.ingress[0].fqdn}"
+}
+
+output "frontend_url" {
+    value = "https://${azurerm_container_app.frontend.ingress[0].fqdn}"
+}

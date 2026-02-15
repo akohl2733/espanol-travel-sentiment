@@ -13,6 +13,7 @@ app = FastAPI()
 origins = [
     "http://localhost:5173",
     "http://localhost:5174",
+    "https://frontend-app.wittybeach-332af7cb.northcentralus.azurecontainerapps.io",
 ]
 
 

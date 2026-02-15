@@ -13,11 +13,11 @@ provider "azurerm" {
 
 resource "azurerm_resource_group" "rg" {
   name     = var.resource_group_name
-  location = "North Central US"
+  location = var.location
 }
 
 resource "azurerm_container_registry" "acr" {
-    name = "andrewkohltravelsentiment"
+    name = var.acr_name
     resource_group_name = azurerm_resource_group.rg.name
     location = azurerm_resource_group.rg.location
     sku = "Basic"
@@ -57,7 +57,7 @@ resource "azurerm_container_app" "backend" {
     }
 
     ingress {
-        external_enabled = false # Private to the internet
+        external_enabled = true
         target_port      = 8000
         traffic_weight {
             percentage      = 100
@@ -91,18 +91,8 @@ resource "azurerm_container_app" "frontend" {
             memory = "0.5Gi"
 
             env {
-                name  = "__VITE_ADDITIONAL_SERVER_ALLOWED_HOSTS"
-                value = "frontend-app.wonderfulcoast-d5ca5bf0.northcentralus.azurecontainerapps.io"
-            }
-
-            env {
-                name  = "BACKEND_API_URL"
+                name  = "VITE_BACKEND_API_URL"
                 value = "https://${azurerm_container_app.backend.ingress[0].fqdn}"
-            }
-
-            env {
-                name  = "VITE_PORT"
-                value = "5173"
             }
         }
 

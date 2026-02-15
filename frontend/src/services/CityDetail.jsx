@@ -11,7 +11,8 @@ export default function CityDetail() {
     useEffect(() => {
         const getData = async () => {
             try {
-                const response = await fetch(`http://127.0.0.1:8000/city/${id}`);
+                const backendUrl = import.meta.env.VITE_BACKEND_API_URL;
+                const response = await fetch(`${backendUrl}/city/${id}`);
                 if (!response.ok) {
                     throw new Error(`Error fetching data. Status: ${response.status}`);
                 } else {

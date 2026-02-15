@@ -12,7 +12,8 @@ export default function RegionTabs() {
     useEffect(() => {
         const fetchOptions = async () => {
             try {
-                const res = await fetch("http://localhost:8000/all_regions");
+                const backendUrl = import.meta.env.VITE_BACKEND_API_URL;
+                const res = await fetch(`${backendUrl}/all_regions`);
                 if (!res.ok) {
                     throw new Error(`Error: ${res.status}`);
                 }

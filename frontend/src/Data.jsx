@@ -8,7 +8,8 @@ export default function DataFetcher() {
     useEffect(() => {
         const fetchData = async () => {
             try {
-                const response = await fetch("http://127.0.0.1:8000/data");
+                const backendUrl = import.meta.env.VITE_BACKEND_API_URL;
+                const response = await fetch(`${backendUrl}/data`);
                 if (!response.ok) {
                     throw new Error(`HTTP Error! See status here ${response.status}`);
                 }

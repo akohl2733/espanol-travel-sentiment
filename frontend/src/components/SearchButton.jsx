@@ -12,7 +12,8 @@ export default function SearchButton() {
         // when user types, fetch options from endpoint
         const fetchCities = async () => {
             try {
-                const res = await fetch(`http://localhost:8000/search_cities?q=${query}`)
+                const backendUrl = import.meta.env.VITE_BACKEND_API_URL;
+                const res = await fetch(`${backendUrl}/search_cities?q=${query}`)
                 if (!res.ok) throw new Error(`Error: ${res.status}`);
                 const data = await res.json();
                 setOptions(data);
